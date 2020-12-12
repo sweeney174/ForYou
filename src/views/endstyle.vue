@@ -1,6 +1,8 @@
 <template>
   <div class="bgimg">
     <img src="../assets/share.png" alt="" id="share" @click="shareview" />
+    <h3 class="tp">礼物传送门：</h3>
+    <h3 class="tpurl">{{receiveUrl}}</h3>
     <button class="endstylebtn" @click="shareview">将它分享给Ta吧!</button>
     <van-share-sheet
       v-model="showShare"
@@ -35,10 +37,11 @@ export default {
           { name: "小程序码", icon: "weapp-qrcode" },
         ],
       ],
+      receiveUrl:''+sessionStorage.getItem('share_code')
     };
   },
 
-  mounted() {
+  beforeMount() {
     console.log(parseInt(sessionStorage.getItem('id')))
     Axios.post("/api/user/upload",{
       username: sessionStorage.getItem('username'),
@@ -51,8 +54,13 @@ export default {
       customized:parseInt(sessionStorage.getItem('customized')),
       id:parseInt(sessionStorage.getItem('id')),
     }).then(res=>{
-      // console.log(res)
-      sessionStorage.getItem('share_code',res.data.share_code)
+      console.log(res)
+      sessionStorage.setItem('share_code',res.data.share_code)
+      sessionStorage.setItem('share_code',encodeURIComponent(res.data.share_code)) 
+      // sessionStorage.setItem('share_code',res.data.share_code+encodeURIComponent(name))
+      // sessionStorage.setItem('share_code',encodeURI(res.data.share_code))
+      this.receiveUrl='https://a1.onesnowwarrior.cn/show?share_code='+sessionStorage.getItem('share_code')
+      console.log(sessionStorage.getItem('share_code'))
     }).catch(err=>{
       console.log(err)
     })
@@ -66,6 +74,24 @@ export default {
 </script>
 
 <style>
+.tp{
+  display: block;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  font-size: 24px;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+.tpurl{
+  display: block;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  font-size: 15px;
+  color: white;
+  transform: translate(-50%, -50%);
+}
 * {
   margin: 0;
   padding: 0;

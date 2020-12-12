@@ -70,7 +70,7 @@ export default {
       page: 1,
       bgpic: "url(../components/editor.png)",
       content: "下一步",
-      text: "",
+      text: "很高兴看到你的h5成功上线，为了这次成功的经验，我为你准备了一份特殊的礼物！希望你能够喜欢。",
     };
   },
   components: {

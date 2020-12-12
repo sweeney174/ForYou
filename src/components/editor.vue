@@ -53,6 +53,7 @@ export default {
       this.message =
         "本次列车是通往2021的列车 严禁携带熬夜、颓废、消沉等危险品上车，带上你热诚、活力、勇猛鲜活的心，上车吧。惟愿今年你更多勇气，更多高光时刻，更多喜极而泣。有人懂你的奇奇怪怪可可爱爱，有人珍惜你心里的柔软。希望xxx永远相信：远方那颗星星刹住车，只为照亮你。 ";
       Toast('信纸背景图片改变咯~')
+      sessionStorage.setItem('background_link','https://foryou-store.oss-cn-shanghai.aliyuncs.com/pre_templates/background/model1.png');
       // document.getElementById("jkl").style.background-"url(1.png) fixed center no-repeat;"
       // console.log(document.querySelector(".editors").getAttribute("background-image"))
     },
@@ -61,11 +62,13 @@ export default {
       this.message =
         "初雪和热咖啡，麋鹿和圣诞树，新年的钟声和倒数计时，所有糟糕的都是经历，所有的美好都会在最后相遇。要更加努力的热爱生活，要走好多好多路，见许多许多人，品尝各种各样的美食，和喜欢的人站在一起，和热爱的一切站在一起。希望圣诞老爷爷呀，一定要把我最宝贝最宝贝的xxx，送到我梦里来。";
         Toast('信纸背景图片改变咯~')
+        sessionStorage.setItem('background_link','https://foryou-store.oss-cn-shanghai.aliyuncs.com/pre_templates/background/model2.png');
     },
     style3() {
       this.message =
         "杏子黄时的雨，皓婉皎月旁的光晕，初冬第一片六角形的雪花，樱桃上聚散的水珠，抬头就能看到的璀璨星河，家里茉莉花开时的香气，咬第一口脆桃时的声响，还有留在手上的彩虹。呐，从九色鹿的眼睛里看到的山峦河川，都不及牵着你的手走过余生的四季。xxx，与世界交手的xx年，兴趣盎然，乐此不疲。";
         Toast('信纸背景图片改变咯~')
+        sessionStorage.setItem('background_link','https://foryou-store.oss-cn-shanghai.aliyuncs.com/pre_templates/background/model3.png');
     },
     changeFile(e) {
       let file = e.target.files[0];
