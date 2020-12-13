@@ -30,8 +30,15 @@
       <div id="ft" style="height: 22vh">
         <div style="height: 2vh"></div>
         <div id="container">
-          <label for="file" ><img src="./uploadpic.png" alt="" id="upupload"></label>
-          <input type="file" id="upload_file_id"  @change="changeFile($event)" accept=".mp3, .mkv, .wma"/>
+          <label for="file"
+            ><img src="./uploadpic.png" alt="" id="upupload"
+          /></label>
+          <input
+            type="file"
+            id="upload_file_id"
+            @change="changeFile($event)"
+            accept="audio/*"
+          />
         </div>
       </div>
     </div>
@@ -39,20 +46,20 @@
 </template>
 
 <script>
-import { Toast } from 'vant';
-import {putMusic} from '../assets/client.js'
+import { Toast } from "vant";
+import { putMusic } from "../assets/client.js";
 
 export default {
   name: "uploadmusic",
-    methods:{
-    changeFile(e){
-     let file=e.target.files[0];
+  methods: {
+    changeFile(e) {
+      let file = e.target.files[0];
       // console.info(file);
-      putMusic(file)
-      Toast('唱片已经为你放进礼物盒咯~')
-      sessionStorage.setItem('customized',1)
-   },
-  }
+      putMusic(file);
+      Toast("唱片已经为你放进礼物盒咯~");
+      sessionStorage.setItem("customized", 1);
+    },
+  },
 };
 </script>
 
@@ -63,20 +70,19 @@ h2 {
   text-indent: 1em;
   font-size: 26px;
 }
-#upupload{
+#upupload {
   position: absolute;
   bottom: 3vh;
   left: 50%;
   transform: translateX(-50%);
 }
-#upload_file_id{
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 25vw;
-    bottom: 16%;
-    height: 12vh;
+#upload_file_id {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25vw;
+  bottom: 16%;
+  height: 12vh;
 }
-
 </style>

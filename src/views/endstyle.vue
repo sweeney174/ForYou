@@ -86,11 +86,15 @@ export default {
 .tpurl{
   display: block;
   position: absolute;
-  top: 70%;
+  top: 75%;
   left: 50%;
   font-size: 15px;
   color: white;
   transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 10vh;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 * {
   margin: 0;

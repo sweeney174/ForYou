@@ -21,7 +21,7 @@
         <!-- <input type="file" id="img-upload"  accept="image/png" multiple="multiple"  onchange="changeFile()"/> -->
       <!-- </div> -->
     </div>
-    <input type="file" id="img-upload" multiple="multiple" @change="changeFile"/>
+    <input type="file" id="img-upload" multiple="multiple" @change="changeFile" accept="image/*"/>
   </div>
 </template>
 
@@ -73,6 +73,7 @@ export default {
     changeFile(e) {
       let file = e.target.files[0];
       // console.info(file);
+      
       putBackground(file);
       Toast('信纸背景图片改变咯~')
     },

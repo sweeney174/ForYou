@@ -1,3 +1,4 @@
+import { Toast } from 'vant';
 const OSS = require('ali-oss');
 let client = new OSS({
   // region以杭州为例（oss-cn-hangzhou），其他region按实际情况填写。
@@ -12,6 +13,7 @@ export async function putBackground (file) {
   try {
     // let file = document.getElementById('upload_file_id').files[0];
     const data = file;
+    // const suffix =file.name.split('.')[1];
     console.log(file)
     // object-key可以自定义为文件名（例如file.txt）或目录（例如abc/test/file.txt）的形式，实现将文件上传至当前Bucket或Bucket下的指定目录。
     let result = await client.put('templates/'+sessionStorage.getItem('id')+'/background/background.png', data);
@@ -55,11 +57,17 @@ export async function putPicture (file) {
     const data = file;
     console.log(file)
     // object-key可以自定义为文件名（例如file.txt）或目录（例如abc/test/file.txt）的形式，实现将文件上传至当前Bucket或Bucket下的指定目录。
+    
+    // let sum=sessionStorage.getItem('photo_sum')
+    // sum++
+    // sessionStorage.setItem('photo_sum',sum)
+    let result = await client.put('templates/'+sessionStorage.getItem('id')+'/photos/'+(parseInt(sessionStorage.getItem('photo_sum'))+1)+'.jpg', data);
+    if (result.res.statusCode==200){
     let sum=sessionStorage.getItem('photo_sum')
     sum++
     sessionStorage.setItem('photo_sum',sum)
-    let result = await client.put('templates/'+sessionStorage.getItem('id')+'/photos/'+sessionStorage.getItem('photo_sum')+'.jpg', data);
-
+    Toast('已经放入了'+sessionStorage.getItem('photo_sum')+'张照片啦~')
+    }
 
     console.log(result);
     

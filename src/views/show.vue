@@ -3,18 +3,18 @@
     class="box"
     :style="{ backgroundImage: 'url(' + this.background_link + ')' }"
   >
-    <div class="music" v-show="musicShow == true">
+    <div class="music" v-show="musicShow ">
       <audio :src="this.music_link" autoplay controls></audio>
     </div>
     <div class="this" v-show="titleShow">
       <h1>This is For You!</h1>
     </div>
-    <div class="text" v-show="textShow == true">
+    <div class="text" v-show="textShow">
       <p>{{ text }}</p>
     </div>
     <div
       class="gift_box"
-      v-show="giftBoxShow == true"
+      v-show="giftBoxShow"
       @click="
         () => {
           this.giftBoxShow = false;
@@ -42,7 +42,7 @@
       <img :src="this.gift_link" alt="" />
     </div>
     <!-- <p>{{id}}</p> -->
-    <div class="pictures" v-show="picturesShow == true">
+    <div class="pictures" v-show="picturesShow">
       <img
         :src="
           'https://foryou-store.oss-cn-shanghai.aliyuncs.com/templates/' +

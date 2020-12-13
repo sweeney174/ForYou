@@ -31,14 +31,14 @@
         <div style="height: 2vh"></div>
         <div id="container">
           <label for="file" ><img src="./uploadpic.png" alt="" id="upupload"></label>
-          <input type="file" id="upload_file_id" @change="changeFile($event)" />
+          <input type="file" id="upload_file_id" @change="changeFile($event)" accept="image/*"/>
         </div>
       </div>
   </div>
 </template>
 
 <script>
-import { Toast } from 'vant';
+// import { Toast } from 'vant';
 import { putPicture } from '../assets/client.js'
 export default {
   name: "uploadpicture",
@@ -47,7 +47,8 @@ export default {
      let file=e.target.files[0];
       // console.info(file);
       putPicture(file)
-      Toast('已经放入了'+sessionStorage.getItem('photo_sum')+'张照片啦~')
+
+      
    },
   }
 };
