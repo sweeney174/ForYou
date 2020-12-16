@@ -14,7 +14,7 @@
       <button class="btn" id="last" @click="prev" v-if="page !== 1">
         <van-icon name="arrow-left" size="40" />
       </button>
-      <span class="head">模板创作</span>
+      <!-- <span class="head">模板创作</span> -->
       <button class="btn" id="next" @click="next">
         <van-icon name="arrow" size="40" />
       </button>
@@ -135,23 +135,28 @@ body {
   font-family: "Microsoft Yahei";
 }
 .bg1 {
-  background: url(../components/editor.png) no-repeat;
+  background: url(../components/editor.png) no-repeat center;
+  background-size: cover;
 }
 .bg2 {
-  background: url(../components/gift.png) no-repeat;
+  background: url(../components/gift.png) no-repeat center;
+  background-size: cover;
 }
 .bg3 {
-  background: url(../components/music.png) no-repeat;
+  background: url(../components/music.png) no-repeat center;
+  background-size: cover;
 }
 .bg4 {
-  background: url(../components/picture.png) no-repeat;
+  background: url(../components/picture.png) no-repeat center;
+  background-size: cover;
 }
 .bg5 {
-  background: url(../components/package.png) no-repeat;
+  background: url(../components/package.png) no-repeat center;
+  background-size: cover;
 }
 
 .pics {
-  width: 340px;
+width: 100%;
   position: absolute;
   bottom: 25vh;
   left: 50%;
@@ -174,16 +179,18 @@ body {
 /* } */
 #last {
   position: absolute;
-  top: 5vh;
-  left: 5vw;
+  top: 50vh;
+  left: 0vw;
   background-color: transparent;
+  transform: translateY(-50%);
 }
 
 #next {
   position: absolute;
-  top: 5vh;
-  right: 5vw;
+  top: 50vh;
+  right: 0vw;
   background-color: transparent;
+  transform: translateY(-50%);
 }
 
 .btn {
@@ -216,7 +223,7 @@ body {
   align-items: center;
   justify-content: space-between;
   max-width: 100%;
-  width: 324px;
+  width: 90vw;
   /* margin: 0 auto; */
 }
 

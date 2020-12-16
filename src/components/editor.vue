@@ -73,7 +73,6 @@ export default {
     changeFile(e) {
       let file = e.target.files[0];
       // console.info(file);
-      
       putBackground(file);
       Toast('信纸背景图片改变咯~')
     },
@@ -91,24 +90,32 @@ body {
 }
 
 .editors {
-  position: absolute;
-  top: 23%;
-
-  padding: 0 10% 10%;
+position: absolute;
+  top: 45%;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   height: 350px;
   /* margin-top: 120px; */
 }
 
 .model1{
-  background: url(https://foryou-store.oss-cn-shanghai.aliyuncs.com/pre_templates/background/model1.png);
+  background: url(https://foryou-store.oss-cn-shanghai.aliyuncs.com/pre_templates/background/model1.png)  fixed center no-repeat;
+  background-size: cover;
+  width: 100%;
+  object-fit: contain;
 }
 
 .model2{
   background: url(https://foryou-store.oss-cn-shanghai.aliyuncs.com/pre_templates/background/model2.png);
+  background-size: cover;
+  object-fit: contain;
 }
 
 .model3{
   background: url(https://foryou-store.oss-cn-shanghai.aliyuncs.com/pre_templates/background/model3.png);
+  background-size: cover;
+  object-fit: contain;
 }
 
 .head-img{

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-// import { Toast } from 'vant';
+import { Toast } from 'vant';
 import { putPicture } from '../assets/client.js'
 export default {
   name: "uploadpicture",
@@ -47,8 +47,7 @@ export default {
      let file=e.target.files[0];
       // console.info(file);
       putPicture(file)
-
-      
+      Toast('已经放入了'+sessionStorage.getItem('photo_sum')+'张照片啦~')
    },
   }
 };

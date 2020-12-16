@@ -2,7 +2,7 @@
   <div class="bgimg">
     <img src="../assets/share.png" alt="" id="share" @click="shareview" />
     <h3 class="tp">礼物传送门：</h3>
-    <h3 class="tpurl">{{receiveUrl}}</h3>
+    <p3 class="tpurl">{{receiveUrl}}</p3>
     <button class="endstylebtn" @click="shareview">将它分享给Ta吧!</button>
     <van-share-sheet
       v-model="showShare"
@@ -87,7 +87,7 @@ export default {
   display: block;
   position: absolute;
   top: 75%;
-  left: 50%;
+  left:50%;
   font-size: 15px;
   color: white;
   transform: translate(-50%, -50%);
@@ -108,7 +108,8 @@ body {
 .bgimg {
   height: 100vh;
   width: 100vw;
-  background: url(../assets/endpic.png) no-repeat;
+  background: url(../assets/endpic.png) no-repeat center ;
+  background-size: cover;
 }
 #share {
   position: absolute;
@@ -119,7 +120,7 @@ body {
 .endstylebtn {
   display: block;
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 50%;
   font-size: 24px;
   color: white;
